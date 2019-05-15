@@ -12,7 +12,7 @@
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <title>MiCole</title>
+        <title>Arquitectura</title>
 
         <!-- Tell the browser to be responsive to screen width -->
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
@@ -95,9 +95,9 @@
             <!-- Logo -->
             <a href="#" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><IMG SRC="../../assests/colegio/Insignia.JPG" WIDTH=50 HEIGHT=50></span>
+                <span class="logo-mini"><IMG SRC="../../assests/claro/claro.png" WIDTH=50 HEIGHT=50></span>
                 <!-- logo for regular state and mobile devices -->
-                <span class="logo-lg"><IMG SRC="../../assests/colegio/LOGOTIPO.PNG" WIDTH=180 HEIGHT=50></span>
+                <span class="logo-lg"><IMG SRC="../../assests/claro/logotipo.png" WIDTH=180 HEIGHT=50></span>
             </a>
 
             <!-- Header Navbar: style can be found in header.less -->
@@ -189,13 +189,9 @@
                     </div>
                     <div class="pull-left info">
                         <p><?php echo $_SESSION['user_nombres']; ?></p> 
-                        <?php if ($_SESSION['user_rol'] == 7) {
-                            ?>
-                            <small><?php echo $_SESSION['grado_descripcion']; ?></small>
-                        <?php } else { ?>
+                        
                             <small><?php echo $_SESSION['user_rol_nombre']; ?></small>
-                        <?php } ?>
-
+                        
                     </div>
                 </div>
 
@@ -203,25 +199,8 @@
                 <ul class="sidebar-menu">
                     <li class="header">MENÚ DE OPCIONES</li>
                         <?php
-                        if ($_SESSION['user_rol'] == 1 || $_SESSION['user_rol'] == 2 || $_SESSION['user_rol'] == 3) {
-                            include '../../includes/menu_header/menu_directores.php';
-                        }
-                        //docentes
-                        if ($_SESSION['user_rol'] == 4) {
-                            include '../../includes/menu_header/menu_profesores.php';
-                        }
-                        //auxiliares
-                        if ($_SESSION['user_rol'] == 5) {
-                            include '../../includes/menu_header/menu_auxiliares.php';
-                        }
-                        //administrativos
-                        if ($_SESSION['user_rol'] == 6) {
-                            include '../../includes/menu_header/menu_administrativos.php';
-                        }
-                        if ($_SESSION['user_rol'] == 7) {
-                            include '../../includes/menu_header/menu_estudiantes.php';
-                        }
-                        ?>
+                          include '../../includes/menu_header/menu_admin.php';
+                         ?>
                 </ul>
 
             </section>

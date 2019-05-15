@@ -4,7 +4,7 @@
                 <div class="pull-right hidden-xs">
                     <b>Version</b> 1.2
                 </div>
-                <strong>Copyright &copy; 2018-2019 <a href="http://www.vyrcorp.com/home.html">VyRcorp <i>#TransformadoVidas</i></a>.</strong> Todos los Derechos Reservados.
+                <strong>Copyright &copy; 2019 <a href="#"> Desarrollado por <i>Henry Villanueva Monrroy</i></a>.</strong> Todos los Derechos Reservados.
             </footer>
 
       

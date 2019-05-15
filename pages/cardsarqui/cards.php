@@ -9,11 +9,11 @@ include ('../../conexionbd/connectDB.php');
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1> <i class='fa fa-edit'></i> <big><u>Usuarios Administrativos</u></big></h1>
+        <h1> <i class='fa fa-edit'></i> <big><u>Reporte</u></big></h1>
         <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i>Inicio</a></li>
-            <li class="breadcrumb-item"><a href="#">Usuarios</a></li>
-            <li class="active">Ver administrativos</li>
+            <li class="breadcrumb-item"><a href="#">Reporte</a></li>
+            <li class="active">Reporte por Arquitecto</li>
         </ol>
     </section>
 
@@ -23,25 +23,25 @@ include ('../../conexionbd/connectDB.php');
         <div class="row">
             <div class="col-md-12">
                 <!-- Profile Image -->
-                <div class="box box-success">
+                <div class="box box-danger">
                     <div class="box-body box-profile">
                         <!-- DATA TABLE-->
                         <div class="row">
                             <div class="col-md-3">
-                                <label><font color="green">Tarea :</font></label>
-                                <input id="inputTarea" class="form-control" type="text" placeholder="Nombre">
+                                <label><font color="darkred">Actividad :</font></label>
+                                <input id="inputTarea" class="form-control" type="text" placeholder="Tarea">
                             </div>
                             <div class="col-md-3">
-                                <label><font color="green">Arquitecto :</font></label>
-                                <input id="inputArqui" class="form-control" type="text" placeholder="Apellido">
+                                <label><font color="darkred">Arquitecto :</font></label>
+                                <input id="inputArqui" class="form-control" type="text" placeholder="Arquitecto">
                             </div>
 
                             <div class="col-md-3">
-                                <label><font color="green">Estado :</font></label>
-                                <select id="selectEstado" onchange="myPillFilter(5, 'selectEstado')" class="form-control select2" style="width: 100%;">                      
+                                <label><font color="darkred">Estado :</font></label>
+                                <select id="selectEstado" onchange="myPillFilter(7, 'selectEstado')" class="form-control select2" style="width: 100%;">                      
                                     <option value="">Seleccionar</option>
                                     <?php
-                                    $url = "../../includes/iL4mMbep.json";
+                                    $url = "../cargar/archivo_trello/u1f2zQ2B.json";
                                     $json = file_get_contents($url);
                                     $obj = json_decode($json, true);
                                     for ($i = 0; $i < count($obj["lists"]); $i++) {
@@ -51,12 +51,12 @@ include ('../../conexionbd/connectDB.php');
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                <label><font color="green"></font></label>
-                                <button id="borrarFiltro" class="buton" name="borrarFiltro" type="button" class="btn btn-success">Reiniciar</button>
+                                <label><font color="red"></font></label>
+                                <button id="borrarFiltro" class="buton" name="borrarFiltro" type="button" class="btn btn-danger">Reiniciar</button>
                             </div>
                             <style>
                                 .buton {
-                                    background-color: green;
+                                    background-color: red;
                                     border: none;
                                     color: white;
                                     padding: 8px 20px;
@@ -83,14 +83,20 @@ include ('../../conexionbd/connectDB.php');
                                                 <div class="table-responsive" style="width: 100%;">
                                                     <table class="demo cell-border dataTable" id="manageProductTable" cellspacing="2px;" style="width: 100%;">
                                                         <thead><tr>
-                                                                <th class="text-center" style="width: 5%">Opcion</th>
-                                                                <th class="text-center" style="width: 30%">Tarea</th>
-                                                                <th class="text-center">fecha de vencimiento</th>
-                                                                <th class="text-center">Arquitecto</th>
-                                                                <th class="text-center">Etiqueta</th>
-                                                                <th class="text-center">Lista</th>
-                                                                <th class="text-center">Dependencia</th>
-                                                            </tr></thead>
+                                                                <th class="text-center" style="width: 5%">Arquitecto</th>
+                                                                <th class="text-center">Actividad</th>
+                                                                <th class="text-center" style="width: 30%">Tipo</th>
+                                                                <th class="text-center">Grupo</th>
+                                                                <th class="text-center">Gerencia</th>
+                                                                <th class="text-center">Responsable</th>
+                                                                <th class="text-center">Etapa Arquitectura</th>
+                                                                <th class="text-center">Estado Arquitectura</th>
+                                                                <th class="text-center">Sub Estado Dependencia</th>
+                                                                <th class="text-center">Responsable Dependencia</th>
+                                                                <th class="text-center">Fecha Vencimiento</th>
+                                                                <th class="text-center">Fecha Inicial Real</th>
+                                                                <th class="text-center">Fecha Final Real</th>
+                                                             </tr></thead>
                                                     </table>
                                                 </div>
                                             </div>

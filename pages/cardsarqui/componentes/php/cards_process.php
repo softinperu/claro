@@ -33,20 +33,17 @@ for ($i = 0; $i < count($obj["cards"]); $i++) {
     /* id del card */
     $data[$i][0] = $obj["cards"][$i]["id"];
 
-    /* miembros del equipo concatenado */
+    /* miembros del equipo ARRAY */
     if (count($obj["cards"][$i]["idMembers"]) > 0) {
-        $comodin = "";
         for ($a = 0; $a < count($obj["cards"][$i]["idMembers"]); $a++) {
             for ($b = 0; $b < count($obj["members"]); $b++) {
                 if ($obj["cards"][$i]["idMembers"][$a] === $miembros[$b][0]) {
-                    $data[$i][1] = $comodin . $miembros[$b][1] . ",";
-                    $comodin = $data[$i][1];
+                    $data[$i][1][$a] = $miembros[$b][1];
                 }
             }
         }
-        $data[$i][1] = trim($data[$i][1], ',');
     } else {
-        $data[$i][1] = "No asignado";
+        $data[$i][1][0] = "No asignado";
     }
 
 
@@ -189,12 +186,11 @@ for ($i = 0; $i < count($obj["cards"]); $i++) {
     $descripcion = $obj["cards"][$i]["desc"];
     if ($descripcion !== "") {
         $descripcion_1 = explode("\n", $descripcion);
-        $fecha_inicial = explode(":",$descripcion_1[0]);
+        $fecha_inicial = explode(":", $descripcion_1[0]);
         $data[$i][12] = $fecha_inicial[1];
         /* fecha de fin real */
-        $fecha_final = explode(":",$descripcion_1[1]);
+        $fecha_final = explode(":", $descripcion_1[1]);
         $data[$i][13] = $fecha_final[1];
-       
     } else {
         $data[$i][12] = "";
         $data[$i][13] = "";
@@ -207,34 +203,37 @@ $i = 0;
 
 while ($i < count($obj["cards"])) {
 
-    $output['data'][] = array(
-        // Arquitecto 
-        $data[$i][1],
-//NombreCard - actividad
-        $data[$i][10],
-        // tipo
-        $data[$i][2],
-        //grupo
-        $data[$i][3],
-        //gerencia
-        $data[$i][4],
-        //responsable
-        $data[$i][5],
-        //etapa
-        $data[$i][6],
-        //Lista de pertenencia
-        $data[$i][9],
-        //responsable dependencia
-        $data[$i][7],
-        //SubDependencia
-        $data[$i][8],
-        //fecha vencimiento
-        $data[$i][11],
-        //fecha inicio real
-        $data[$i][12],
-        //fecha fin real
-        $data[$i][13]
-    );
+    for ($z = 0 ; $z< count($data[$i][1]) ;$z++) {
+        $output['data'][] = array(
+            // Arquitecto 
+            $data[$i][1][$z],
+            //NombreCard - actividad
+            $data[$i][10],
+            // tipo
+            $data[$i][2],
+            //grupo
+            $data[$i][3],
+            //gerencia
+            $data[$i][4],
+            //responsable
+            $data[$i][5],
+            //etapa
+            $data[$i][6],
+            //Lista de pertenencia
+            $data[$i][9],
+            //responsable dependencia
+            $data[$i][7],
+            //SubDependencia
+            $data[$i][8],
+            //fecha vencimiento
+            $data[$i][11],
+            //fecha inicio real
+            $data[$i][12],
+            //fecha fin real
+            $data[$i][13]
+        );
+    }
+
     $i++;
 }
 echo json_encode($output);

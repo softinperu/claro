@@ -16,9 +16,9 @@ $(document).ready(function () {
         "buttons": [
             {extend: 'excel',
                 exportOptions: {
-                    columns: [0, 1, 2, 3, 4, 5]
+                    columns: [0, 1, 2, 3, 4, 5,6,7,8,9,10,11,12]
                 },
-                filename: 'Cards'
+                filename: 'Cards x Actividades'
             }
         ]
 
@@ -34,7 +34,7 @@ $(document).ready(function () {
     });
     //funcion para filtrar los input
     $('#inputArqui').on('keyup', function () {
-        manageProductTable.column(3).search(this.value).draw();
+        manageProductTable.column(0).search(this.value).draw();
     });
 }); // document.ready fucntion
 

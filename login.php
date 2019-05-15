@@ -1,5 +1,4 @@
-<?php
-session_start();?>
+<?php session_start(); ?>
 <?php
 include ("conexionbd/connectDB.php");
 require 'pages/logueo/validar_login.php';
@@ -31,25 +30,22 @@ if ($_POST) {
         <!-- iCheck -->
         <link rel="stylesheet" href="assests/plugins/iCheck/square/blue.css">
 
-        <link rel="icon" href="assests/images/icon.PNG">
-        <link rel="shortcut icon" href="assests/images/icon.PNG">
+        <link rel="icon" href="assests/images/icon.png">
+        <link rel="shortcut icon" href="assests/images/icon.png">
 
         <!-- Marcador en escritorio de Iphone-->
-        <link rel="apple-touch-icon" href="assests/images/icon.PNG">
+        <link rel="apple-touch-icon" href="assests/images/icon.png">
     </head>
-    <body class="hold-transition login-page" STYLE="background-color:#1E64B2">
+    <body class="hold-transition login-page" STYLE="background-color:#ED0001">
 
 
         <!-- inicio cabecera -->
         <header>
             <div class="container">
                 <figure class="inventariapp-logo-container pull-left">
-                    <center><a href="../MiCole/"><img class="inventariapp-logo img-responsive" src="assests/colegio/Insignia.JPG" width="100" height="200" ></a></center>
+                    <center><a href="#"><img class="inventariapp-logo img-responsive" src="assests/claro/claro.png" width="100" height="200" ></a></center>
                 </figure>
-                
-                <figure class="inventariapp-logo-container pull-right">
-                 <center>   <br><a href="../MiCole/"><img class="inventariapp-logo img-responsive" src="assests/images/logo.JPG" width="200" height="200" ></a></center>
-                </figure>
+
             </div>
         </header>
         <!-- fin cabecera -->
@@ -58,12 +54,12 @@ if ($_POST) {
 
         <div class="login-box">
             <div  class="login-logo">
-                <font color="white"><b>Portal académico</b></font>
+                <font color="white"><b>Portal Arquitectura</b></font>
             </div>
-            
+
             <!-- /.login-logo -->
             <div class="login-box-body">
-                
+
                 <p class="login-box-msg"><font face = "Comic sans MS" size =" 5"><u><b> Iniciar sesión </b></u></font></p>
 
                 <div class="messages">
@@ -80,7 +76,7 @@ if ($_POST) {
 
                 <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="POST" id="loginform">                                     
                     <div class="form-group has-feedback">
-                        <input id="dni" name="dni" type="text" class="form-control" placeholder="dni">
+                        <input id="dni" name="dni" type="text" class="form-control" placeholder="Código">
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
 
@@ -98,7 +94,7 @@ if ($_POST) {
 
                         </div>
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Entrar</button>
+                            <button type="submit" class="btn btn-danger btn-block btn-flat">Entrar</button>
                         </div>
                     </div>
                 </form>
@@ -117,13 +113,13 @@ if ($_POST) {
         <!-- iCheck -->
         <script src="assests/plugins/iCheck/icheck.min.js"></script>
         <script>
-                                    $(function () {
-                                        $('input').iCheck({
-                                            checkboxClass: 'icheckbox_square-blue',
-                                            radioClass: 'iradio_square-blue',
-                                            increaseArea: '20%' // optional
-                                        });
-                                    });
+                    $(function () {
+                        $('input').iCheck({
+                            checkboxClass: 'icheckbox_square-blue',
+                            radioClass: 'iradio_square-blue',
+                            increaseArea: '20%' // optional
+                        });
+                    });
 
         </script>
 

@@ -42,7 +42,7 @@ function valida_db($dni, $password) {
                 $_SESSION['user_codigo'] = $value['codigo'];
                 $_SESSION['user_nombres'] = $value['nombres'];
                 $_SESSION['user_apellidos'] = $value['apellidos'];
-                $_SESSION['user_rol'] = $value['rol'];
+                $_SESSION['user_rol_nombre'] = $value['rol'];
 
                 echo "<script> window.location='pages/cards2/cards.php'; </script>";
             } else {
