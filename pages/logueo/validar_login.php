@@ -44,7 +44,7 @@ function valida_db($dni, $password) {
                 $_SESSION['user_apellidos'] = $value['apellidos'];
                 $_SESSION['user_rol'] = $value['rol'];
 
-                echo "<script> window.location='pages/cards/cards.php'; </script>";
+                echo "<script> window.location='pages/cards2/cards.php'; </script>";
             } else {
                 array_push($errors_db, 'Ud. ha sido bloqueado');
             }

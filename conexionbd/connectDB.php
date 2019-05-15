@@ -4,7 +4,7 @@
 
 $localhost = "localhost";
 $username = "root";
-$password = "root";
+$password = "";
 $dbname = "claro";
 
 class DBi {
